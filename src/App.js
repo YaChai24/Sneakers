@@ -22,7 +22,6 @@ function App() {
       
     React.useEffect(() => {
       async function fetchData () {
-        // TODO: Сделать try catch + Promise.all
        try {
         const [cartResponse, favoritesResponse, itemsResponse] = await Promise.all
           ([axios.get('https://7017ffb177ca5951.mokky.dev/cart'),
