@@ -21,8 +21,8 @@ function Home ({ items,  searchValue, setSearchValue, onChangeInput, onAddToFavo
         <div className="d-flex align-center mb-40 justify-between">
         <h1>{searchValue ? `Поиск по запросу: "${searchValue}"` : 'Все кроссовки'}</h1>
         <div className="search-block d-flex">
-            <img src="/img/search.svg" alt="Search"></img>
-            {searchValue && <img onClick={() => setSearchValue('')}  className="clear cu-p" src="/img/btn-remove.svg" alt="Clear"></img>}
+            <img src="img/search.svg" alt="Search"></img>
+            {searchValue && <img onClick={() => setSearchValue('')}  className="clear cu-p" src="img/btn-remove.svg" alt="Clear"></img>}
             <input onChange={onChangeInput} value={searchValue} placeholder="Поиск..." type="text"></input>
         </div>
         </div>
