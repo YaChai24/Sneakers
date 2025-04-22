@@ -24,7 +24,10 @@ function App() {
       async function fetchData () {
         // TODO: Сделать try catch + Promise.all
        try {
-        const [cartResponse, favoritesResponse, itemsResponse] = await Promise.all([axios.get('https://7017ffb177ca5951.mokky.dev/cart'), axios.get('https://7017ffb177ca5951.mokky.dev/favorites'), axios.get('https://7017ffb177ca5951.mokky.dev/items')]);
+        const [cartResponse, favoritesResponse, itemsResponse] = await Promise.all
+          ([axios.get('https://7017ffb177ca5951.mokky.dev/cart'),
+           axios.get('https://7017ffb177ca5951.mokky.dev/favorites'),
+           axios.get('https://7017ffb177ca5951.mokky.dev/items')]);
         // const cartResponse = await axios.get('https://7017ffb177ca5951.mokky.dev/cart')
         // const favoritesResponse = await  axios.get('https://7017ffb177ca5951.mokky.dev/favorites')
         // const itemsResponse = await axios.get('https://7017ffb177ca5951.mokky.dev/items')
@@ -115,7 +118,7 @@ function App() {
       <Header onClickCart = {() => setCartOpened(true)} />
         
       <Routes>
-        <Route path="" element={
+        <Route path="" exact element={
         <Home
           items = {items}
           cartItems = {cartItems}
@@ -131,11 +134,11 @@ function App() {
 
       
       <Routes>
-        <Route path="favorites" element={<Favorites />}></Route>
+        <Route path="favorites" exact element={<Favorites />}></Route>
       </Routes>
 
       <Routes>
-        <Route path="orders" element={<Orders />}></Route>
+        <Route path="orders" exact element={<Orders />}></Route>
       </Routes>
     </div>
       </AppContext.Provider>
